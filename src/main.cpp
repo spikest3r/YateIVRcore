@@ -86,7 +86,7 @@ bool RecvLoop() {
                         else {
                             // reject call from core
                             char buf[4096];
-                            sprintf_s(buf, 4096, "%%%%<message:%s:false::", call_id.c_str());
+                            sprintf_s(buf, 4096, "%%%%<message:%s:false::", msg_id.c_str());
                             Send(g_sock, buf);
                         }
                     }
