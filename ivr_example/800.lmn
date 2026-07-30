@@ -1,0 +1,21 @@
+routine onCall
+    playWav 'C:/VoIP_Assets/welcome_menu.wav'
+endroutine
+
+routine onDtmf
+    getDtmf &str
+    str2int str, &digit
+
+    if digit == 1
+        speakToWav 'Hello world', 'C:/VoIP_Assets/temp.wav'
+        playWav 'C:/VoIP_Assets/temp.wav'
+    else
+        if digit == 2
+            playWav 'C:/VoIP_Assets/music.wav'
+        endif
+    endif
+endroutine
+
+routine onHangup
+    # empty
+endroutine

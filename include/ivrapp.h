@@ -1,15 +1,12 @@
 #pragma once
 
 #include "includes.h"
-#include "coreapi.h"
-
-struct AppAPI {
-    OnCallStartFn OnCallStart;
-    OnDtmfFn OnDtmf;
-    OnHangUpFn OnHangUp;
-};
+#include "vm-inc/types.h"
 
 struct IVRApp {
-    HMODULE dll;
-    AppAPI api;
+    VMProgramData progData;
+    uint32_t onCallPC;
+    uint32_t onDtmfPC;
+    uint32_t onHangupPC;
+    int extension;
 };
